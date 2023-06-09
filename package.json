@@ -1,0 +1,29 @@
+{
+  "name": "moxi",
+  "version": "0.0.1",
+  "description": "MOXI is a library for frontend A/B-testing and personalisation of reactive SPA user interfaces.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schafeld/MOXI.git"
+  },
+  "keywords": [
+    "testing",
+    "personalisation",
+    "javascript",
+    "mutation",
+    "observer",
+    "abtesting",
+    "A/B-Testing",
+    "experience"
+  ],
+  "author": "Oliver Schafeld <info@schafeld.com>",
+  "license": "SEE LICENSE IN README",
+  "bugs": {
+    "url": "https://github.com/schafeld/MOXI/issues"
+  },
+  "homepage": "https://github.com/schafeld/MOXI#readme"
+}
