@@ -4,7 +4,8 @@
   "description": "MOXI is a library for frontend A/B-testing and personalisation of reactive SPA user interfaces.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
