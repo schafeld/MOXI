@@ -49,6 +49,16 @@
                 var pageId = target.getAttribute("href").substring(1); // Remove the "#" symbol
                 showPage(pageId);
                 event.preventDefault();
+
+                // Update the URL
+                window.location.hash = pageId;
+
+                // Update the browser history
+                // window.history.pushState(null, null, "#" + pageId);
+
+                // avoid double history entry
+                window.history.replaceState(null, null, "#" + pageId);
+
             }
         }
 
@@ -60,6 +70,19 @@
 
         // Show the home page by default
         showPage("home");
+
+        // Show the page corresponding to the URL hash, if any
+        // Attach event listener to the browser history
+        window.addEventListener("popstate", function(event) {
+            var pageId = window.location.hash.substring(1); // Remove the "#" symbol
+            
+            if (pageId === "") {
+                pageId = "home";
+            }
+            showPage(pageId);
+        });
+
+        
     </script>
 </body>
 </html>
