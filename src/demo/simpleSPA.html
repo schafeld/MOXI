@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Single Page Application Demo</title>
+    <script src="../../dist/bundle.js"></script>
 </head>
 <body>
     <header>
@@ -75,7 +76,7 @@
         // Attach event listener to the browser history
         window.addEventListener("popstate", function(event) {
             var pageId = window.location.hash.substring(1); // Remove the "#" symbol
-            
+
             if (pageId === "") {
                 pageId = "home";
             }
