@@ -1,3 +1,8 @@
 import logger from "./logger";
 
-logger(); // Hello World!
+try {
+  logger(); // Hello World!
+}
+catch (e) {
+  console.error(e);
+}
