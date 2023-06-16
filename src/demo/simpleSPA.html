@@ -1,0 +1,65 @@
+<!-- Prompt: "Give me Javascript code for a very basic single page application demo. Don't use any dependencies, please." Added on with Github Copilot. Manually fixed. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Single Page Application Demo</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Single Page Application Demo</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+  
+    <div id="home" class="page">
+        <h2>Home</h2>
+        <p>This is the home page.</p>
+    </div>
+
+    <div id="about" class="page">
+        <h2>About</h2>
+        <p>This is the about page.</p>
+    </div>
+
+    <div id="contact" class="page">
+        <h2>Contact</h2>
+        <p>This is the contact page.</p>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            var pages = document.getElementsByClassName("page");
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = "none";
+            }
+            
+            // Show the selected page
+            var selectedPage = document.getElementById(pageId);
+            selectedPage.style.display = "block";
+
+        }
+
+        function handleNavigation(event) {
+            var target = event.target;
+            if (target.tagName === "A") {
+                var pageId = target.getAttribute("href").substring(1); // Remove the "#" symbol
+                showPage(pageId);
+                event.preventDefault();
+            }
+        }
+
+        // Attach event listener to the navigation links
+        var navLinks = document.getElementsByTagName("a");
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener("click", handleNavigation);
+        }
+
+        // Show the home page by default
+        showPage("home");
+    </script>
+</body>
+</html>
