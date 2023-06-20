@@ -2,32 +2,44 @@ const detectPathChanges = function(callback) {
   var pushState = history.pushState;
   var replaceState = history.replaceState;
 
+  let lastPath = "";
+
+  if (typeof callback !== 'function' && callback !== undefined) {
+    console.warn('detectPathChanges: Callback is not a function.');
+    return true;
+  }
+
+  function actionOnNavigation() {
+    // execute callback function if it exists and if the path has changed
+    if (typeof callback === 'function' && location.pathname + location.hash !== lastPath) {
+      callback();
+      lastPath = location.pathname + location.hash;
+    }
+  }
+
+
   history.pushState = function () {
     pushState.apply(history, arguments);
     window.dispatchEvent(new Event('pushstate'));
-    window.dispatchEvent(new Event('locationchange'));
   };
 
   history.replaceState = function () {
     replaceState.apply(history, arguments);
     window.dispatchEvent(new Event('replacestate'));
-    window.dispatchEvent(new Event('locationchange'));
   };
 
-  // This catches browser back, but also triggers duplicate log on menu clicks, TODO: fix.
-  window.addEventListener('popstate', function () {
-    window.dispatchEvent(new Event('locationchange'));
+
+  window.addEventListener('pushstate', function () {
+    actionOnNavigation();
   });
 
-  window.addEventListener('locationchange', function () {
-    // execute callback function if it exists
-    if (typeof callback === 'function') {
-      callback();
-    } else {
-      console.warn('No callback passed or callback is not a function');
-      return true;
-    }
-  })
+  window.addEventListener('replacestate', function () {
+    actionOnNavigation();
+  });
+
+  window.addEventListener('popstate', function () {
+    actionOnNavigation();
+  });
 }
 
 export default detectPathChanges;
