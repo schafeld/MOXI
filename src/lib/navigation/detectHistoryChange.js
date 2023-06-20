@@ -14,10 +14,10 @@ const detectPathChanges = function(callback) {
     window.dispatchEvent(new Event('locationchange'));
   };
 
-  // This may be required with other kinds of SPA or a router.
-  // window.addEventListener('popstate', function () {
-  //   window.dispatchEvent(new Event('locationchange'));
-  // });
+  // This catches browser back, but also triggers duplicate log on menu clicks, TODO: fix.
+  window.addEventListener('popstate', function () {
+    window.dispatchEvent(new Event('locationchange'));
+  });
 
   window.addEventListener('locationchange', function () {
     // execute callback function if it exists
