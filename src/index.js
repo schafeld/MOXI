@@ -1,4 +1,4 @@
-import logger from "./logger";
+import logger from "./lib/helper/logger";
 import detectHistoryChange from "./lib/navigation/detectHistoryChange";
 
 try {
