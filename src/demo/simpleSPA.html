@@ -3,11 +3,13 @@
 <html>
 <head>
     <title>Single Page Application Demo</title>
-    <script src="../../dist/bundle.js"></script>
+    
 </head>
 <body>
     <header>
         <h1>Welcome to the Single Page Application Demo</h1>
+        <p>This is a very basic single page application demo.</p>
+        <p>Click on the links below to navigate between pages and watch the console to see the navigation being detected by the detectHistoryChange script.</p>
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -30,6 +32,28 @@
         <p>This is the contact page.</p>
     </div>
 
+    <hr>
+    <p>This is testing the Mutation Observer. Watch the console to see the DOM manipulation being detected by the detectDomChanges script.</p></p>
+    <!-- Add a button that inserts or removes a DOM node -->
+    <button id="toggleButton">Toggle</button>
+    <div id="toggleTarget">
+        <p>This is the target of the toggle button.</p>
+    </div>
+
+    <script>
+        // Add a button that inserts or removes a DOM node
+        var toggleButton = document.getElementById("toggleButton");
+        var toggleTarget = document.getElementById("toggleTarget");
+        toggleButton.addEventListener("click", function() {
+            if (toggleTarget.parentNode) {
+                toggleTarget.parentNode.removeChild(toggleTarget);
+            } else {
+                document.body.appendChild(toggleTarget);
+            }
+        });
+    </script>
+
+
     <script>
         function showPage(pageId) {
             // Hide all pages
@@ -42,6 +66,14 @@
             var selectedPage = document.getElementById(pageId);
             selectedPage.style.display = "block";
 
+            // Add class "active" to the selected page, remove it from the others
+            for (var i = 0; i < pages.length; i++) {
+                if (pages[i] === selectedPage) {
+                    pages[i].classList.add("active");
+                } else {
+                    pages[i].classList.remove("active");
+                }
+            }
         }
 
         function handleNavigation(event) {
@@ -85,5 +117,8 @@
 
         
     </script>
+
+    <script src="../../dist/bundle.js"></script>
 </body>
+
 </html>
