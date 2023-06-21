@@ -1,11 +1,14 @@
 import logger from "./lib/helper/logger";
-import detectHistoryChange from "./lib/navigation/detectHistoryChange";
+import detectHistoryChanges from "./lib/navigation/detectHistoryChanges";
+import detectDomChanges from "./lib/dom/detectDomChanges";
 
 try {
   logger("Started script.");
 
   // pass logger with a text argument to the callback
-  detectHistoryChange( () => logger("Navigated to a new view / hash-route:" + location.pathname + location.hash));
+  detectHistoryChanges( () => logger("Navigated to a new view / hash-route:" + location.pathname + location.hash));
+
+  detectDomChanges();
 }
 catch (e) {
   console.error(e);
