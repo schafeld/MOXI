@@ -13,3 +13,5 @@ When using mutation observers, you should always be careful to not introduce per
 ## Copyright / License
 
 See [LICENSE](./LICENSE) for more information. In short: Use at your own risk! Or not at all.
+
+All trademarks and brands are the property of their respective owners.
