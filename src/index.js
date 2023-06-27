@@ -1,7 +1,7 @@
-import logger from "./lib/helper/logger";
-import detectHistoryChanges from "./lib/navigation/detectHistoryChanges";
-import detectDomChanges from "./lib/dom/detectDomChanges";
-import detectRouteChanges from "./lib/navigation/nuxt/detectRouteChanges";
+import logger from "./lib/helper/logger.mjs";
+import detectHistoryChanges from "./lib/navigation/detectHistoryChanges.js";
+import detectDomChanges from "./lib/dom/detectDomChanges.js";
+import detectRouteChanges from "./lib/navigation/nuxt/detectRouteChanges.js";
 
 try {
   logger("Started script.");

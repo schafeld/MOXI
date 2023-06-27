@@ -1,12 +1,13 @@
 {
   "name": "moxi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MOXI is a library for frontend A/B-testing and personalisation of reactive SPA user interfaces.",
-  "main": "index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
-    "build:unminified": "webpack --config webpack.prod.unminified.js"
+    "test": "npx mocha",
+    "build": "webpack --config webpack.config.cjs",
+    "build:unminified": "webpack --config webpack.prod.unminified.cjs"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,9 @@
   },
   "homepage": "https://github.com/schafeld/MOXI#readme",
   "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "sinon": "^15.2.0",
     "webpack": "^5.86.0",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.9.0"
