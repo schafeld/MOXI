@@ -3,7 +3,7 @@ const logger = function(text) {
     console.log(text);
   }
   else {
-    console.log("No text passed to logger.");
+    console.log("MOXI: No text passed to logger.");
   }
 }
 

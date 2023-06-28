@@ -9,7 +9,7 @@ const detectDomChanges = function() {
       }
       
       // Works usually without paying attention to removed nodes.
-      if (mutation.removedNodes.length) { console.log(mutation.removedNodes[0], " removed"); }
+      if (mutation.removedNodes.length) { console.log("MOXI: ", mutation.removedNodes[0], " removed"); }
 
       /* TODO
       if (!isTargetUrl()) {

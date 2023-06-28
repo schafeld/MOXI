@@ -19,7 +19,7 @@ describe('logger', function() {
 
     logger();
 
-    assert.isTrue(logSpy.calledWith('No text passed to logger.'));
+    assert.isTrue(logSpy.calledWith('MOXI: No text passed to logger.'));
 
     logSpy.restore();
   });
