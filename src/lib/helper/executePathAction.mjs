@@ -17,8 +17,9 @@ const executePathAction = () => {
 
 
     if (isValid) {
-        // execute action
-        action();
+        if (action !== null || action !== undefined || action !== "") {
+            action();
+        }
         return true;
     }
 
