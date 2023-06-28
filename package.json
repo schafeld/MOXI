@@ -7,7 +7,7 @@
   "scripts": {
     "test": "npx mocha",
     "build": "webpack --config webpack.config.cjs",
-    "build:unminified": "webpack --config webpack.prod.unminified.cjs",
+    "build:unminified": "webpack --config webpack.prod.unminified.cjs && python clean_build.py",
     "build:dev": "webpack --config webpack.dev.cjs && node --experimental-specifier-resolution=node remove-comments.js"
   },
   "repository": {
