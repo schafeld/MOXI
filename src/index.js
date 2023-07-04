@@ -2,10 +2,12 @@ import logger from "./lib/helper/logger.mjs";
 // import detectHistoryChanges from "./lib/navigation/detectHistoryChanges.js";
 import detectDomChanges from "./lib/dom/detectDomChanges.js";
 import detectRouteChanges from "./lib/navigation/nuxt/detectRouteChanges.js";
+
 // Execute specific actions based on path:
-import executePathAction from "./lib/helper/executePathAction.mjs";
+// import executePathAction from "./lib/helper/executePathAction.mjs";
+
 // Just to detect if page or page type is eligible for action:
-// import isValidPath from "./lib/helper/isValidPath.mjs";
+import isValidPath from "./lib/helper/isValidPath.mjs";
 
 try {
   logger("Started MOXI script.");
@@ -17,13 +19,13 @@ try {
   detectRouteChanges( () => {
     logger("MOXI: Navigated to a new route: " + window.$nuxt.$route.path);
 
-    // if (isValidPath()) {
-    //   logger("Path is valid.");
-    // } else {
-    //   logger("Path is not valid.");
-    // }
+    if (isValidPath()) {
+      logger("Path is valid.");
+    } else {
+      logger("Path is not valid.");
+    }
 
-    executePathAction();
+    // executePathAction();
   });
 
   detectDomChanges();
