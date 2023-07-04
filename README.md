@@ -1,3 +1,6 @@
+![Logo MOXI](./assets/logo-moxi.svg =80x42)
+
+
 # MOXI – Work in Progress
 
 Mutation Observer eXperience Injector – Library for frontend A/B-testing and personalisation of reactive SPA user interfaces.
@@ -13,5 +16,7 @@ When using mutation observers, you should always be careful to not introduce per
 ## Copyright / License
 
 See [LICENSE](./LICENSE) for more information. In short: Use at your own risk! Or not at all.
+
+The "MOXI" logo is an original design by Oliver Schafeld, copyrighted 2023. Do not use without permission.
 
 All trademarks and brands are the property of their respective owners.
