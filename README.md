@@ -1,4 +1,4 @@
-![Logo MOXI](./assets/logo-moxi.svg)
+![Logo MOXI](./assets/logo-moxi.svg =100x)
 
 
 # MOXI – Work in Progress
